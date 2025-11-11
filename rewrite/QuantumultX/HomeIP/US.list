@@ -1,1 +1,92 @@
-# ceshi
+# 去广告规则
+DOMAIN-SUFFIX,aax.amazon-adsystem.com,REJECT
+DOMAIN-SUFFIX,aax-fe.amazon-adsystem.com,REJECT
+DOMAIN-SUFFIX,aax-fe-sin.amazon-adsystem.com,REJECT
+DOMAIN-SUFFIX,ads.inmobi.com,REJECT
+DOMAIN-SUFFIX,ads.tntk.be,REJECT
+DOMAIN-SUFFIX,a1.tntk.be,REJECT
+DOMAIN-SUFFIX,paypal-metrics.com,REJECT
+
+DOMAIN-SUFFIX,ads.pubmatic.com,REJECT
+DOMAIN-SUFFIX,app-analytics-services.com,REJECT
+DOMAIN-SUFFIX,au.w.inmobi.com,REJECT
+DOMAIN-SUFFIX,b.de.inmobi.com,REJECT
+DOMAIN-SUFFIX,bidder.criteo.com,REJECT
+DOMAIN-SUFFIX,c.amazon-adsystem.com,REJECT
+DOMAIN-SUFFIX,cdn-f.adsmoloco.com,REJECT
+DOMAIN-SUFFIX,cdn.liftoff-creatives.io,REJECT
+DOMAIN-SUFFIX,cdn.mobilefuse.com,REJECT
+DOMAIN-SUFFIX,cdn2.inner-active.mobi,REJECT
+DOMAIN-SUFFIX,config.inmobi.com,REJECT
+DOMAIN-SUFFIX,cr.adsappier.com,REJECT
+DOMAIN-SUFFIX,dspbeacons.ihasdsp.inmobi.com,REJECT
+DOMAIN-SUFFIX,dspbeacons.old.ihasdsp.inmobi.com,REJECT
+DOMAIN-SUFFIX,ep7.facebook.com,REJECT
+DOMAIN-SUFFIX,et-eus.w.inmobi.com,REJECT
+DOMAIN-SUFFIX,ets-ap-southeast-1.track.smaato.net,REJECT
+DOMAIN-SUFFIX,exchange-b-events.inner-active.mobi,REJECT
+DOMAIN-SUFFIX,firebase-settings.crashlytics.com,REJECT
+DOMAIN-SUFFIX,firebaseinstallations.googleapis.com,REJECT
+DOMAIN-SUFFIX,firebaselogging-pa.googleapis.com,REJECT
+DOMAIN-SUFFIX,firebaseremoteconfig.googleapis.com,REJECT
+DOMAIN-SUFFIX,googleads.g.doubleclick-cn.net,REJECT
+DOMAIN-SUFFIX,gum.criteo.com,REJECT
+DOMAIN-SUFFIX,i.l-dsp.inmobicdn.net,REJECT
+DOMAIN-SUFFIX,i.l.inmobicdn.net,REJECT
+DOMAIN-SUFFIX,ic.de.inmobi.com,REJECT
+DOMAIN-SUFFIX,impression-asia.liftoff.io,REJECT
+DOMAIN-SUFFIX,impression.link,REJECT
+DOMAIN-SUFFIX,ins.track.tappx.com,REJECT
+DOMAIN-SUFFIX,itunes.apple.com,REJECT
+DOMAIN-SUFFIX,lh3.googleadsserving.cn,REJECT
+DOMAIN-SUFFIX,mads.amazon-adsystem.com,REJECT
+DOMAIN-SUFFIX,mfx.mobilefuse.com,REJECT
+DOMAIN-SUFFIX,mt-usw.appiersig.com,REJECT
+DOMAIN-SUFFIX,ow.pubmatic.com,REJECT
+DOMAIN-SUFFIX,pagead2.googlesyndication-cn.com,REJECT
+DOMAIN-SUFFIX,sdk-dnt.ad.smaato.net,REJECT
+DOMAIN-SUFFIX,sdk-files.smaato.net,REJECT
+DOMAIN-SUFFIX,sdk-hb-cfg.smaato.net,REJECT
+DOMAIN-SUFFIX,skadnetworks.fyber.com,REJECT
+DOMAIN-SUFFIX,ssp.api.tappx.com,REJECT
+DOMAIN-SUFFIX,supply.inmobicdn.net,REJECT
+DOMAIN-SUFFIX,tpc.googlesyndication-cn.com,REJECT
+DOMAIN-SUFFIX,tr-asia.adsmoloco.com,REJECT
+DOMAIN-SUFFIX,view.adjust.com,REJECT
+DOMAIN-SUFFIX,vst.c.appier.net,REJECT
+DOMAIN-SUFFIX,wv.inner-active.mobi,REJECT
+DOMAIN-SUFFIX,www.googletagservices-cn.com,REJECT
+DOMAIN-SUFFIX,www.smaato.com,REJECT
+
+# 分流规则（PROXY 或 DIRECT）
+DOMAIN-SUFFIX,tktn.at,美国IP
+DOMAIN-SUFFIX,tktn.be,美国IP
+DOMAIN-SUFFIX,vm.talkatone.com,美国IP
+DOMAIN-SUFFIX,tenor.com,美国IP
+DOMAIN-SUFFIX,talkatone.com,美国IP
+DOMAIN-SUFFIX,crashlytics.com,美国IP
+DOMAIN-SUFFIX,mobilefuse.com,美国IP
+DOMAIN-SUFFIX,crashlytics.com,美国IP
+DOMAIN-SUFFIX,inmobi.com,美国IP
+DOMAIN-SUFFIX,kochava.com,美国IP
+DOMAIN-SUFFIX,cohere.com,美国IP
+DOMAIN-SUFFIX,ip-api.com,美国IP
+IP-CIDR,50.117.27.0/24,美国IP
+IP-CIDR,69.46.75.0/24,美国IP
+IP-CIDR,69.171.224.0/19,美国IP
+IP-CIDR,205.164.56.0/24,美国IP
+IP-CIDR,63.251.124.0/24,美国IP
+
+HOST-KEYWORD,paypal,美国IP
+DOMAIN-SUFFIX,paypal.com,美国IP
+DOMAIN-SUFFIX,paypalobjects.com,美国IP
+DOMAIN-SUFFIX,braintreegateway.com,美国IP
+DOMAIN-SUFFIX,paypal.com,美国IP
+
+# 其他相关 IP 范围根据节点调整
+
+# URL 重写（可选，去广告补充）
+^https?:\/\/alt-r\.my\.com\/mobile - reject-dict
+
+# MITM 主机名（可选，用于 HTTPS 拦截）
+hostname = %APPEND% alt-r.my.com, imgx.jampp.com
